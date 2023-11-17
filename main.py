@@ -15,6 +15,7 @@ def calculate():
     # Just pulling out the SAP score and ECF for now, can contain CO2 emissions data etc
     for key, value in data.items():
         result[key] = {
+            "name": key,
             "EER": calculate_worksheet(value)["SAP_rating"],
             "EIR": {
                 "EI_rating": calculate_worksheet(value)["CO2_emissions"]["EI_rating"],
